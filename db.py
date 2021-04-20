@@ -1,5 +1,5 @@
 import os
-from dotenv import dotenv_values, load_dotenv
+from dotenv import load_dotenv
 import pymongo
 from bson.json_util import dumps
 import json
