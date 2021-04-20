@@ -1,12 +1,12 @@
 # NLP
 
-You need to have python and the flask package installed
+#### Before running the server do:
 
 ```
-pip install flask
+pip install flask dotenv pymongo
 ```
 
-In order to run server.py write
+#### In order to run the surver do:
 
 ```
 py server.py
