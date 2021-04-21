@@ -1,5 +1,7 @@
 from flask import Flask, jsonify
 import db
+import twitter
+import nlp
 # Create the application instance
 app = Flask(__name__)
 
@@ -13,8 +15,13 @@ def home(symbol):
 
     :return:
     """
-    result = db.findStockBySymbol(symbol)
-    return jsonify(result)
+    
+    #result = db.findStockBySymbol(symbol)
+    
+    test = twitter.searchRecentTweets("Apple")
+    nlpPreparedText = twitter.prepareTweetsForNLP(test)
+    tokens = nlp.getFrequencyFromTweets(nlpPreparedText)
+    return jsonify(tokens)
 
 # If we're running in stand alone mode, run the application
 if __name__ == '__main__':
